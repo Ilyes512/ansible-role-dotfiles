@@ -1,0 +1,8 @@
+---
+dotfiles_user: vagrant
+dotfiles_group: "{{ dotfiles_user }}"
+dotfiles_laravel_helpers:
+  - { regexp: "^alias artisan=\"php artisan\"", line: "alias artisan=\"php artisan\"" }
+  - { regexp: "^alias refresh=\"php artisan migrate:refresh --seed\"", line: "alias refresh=\"php artisan migrate:refresh --seed\"" }
+  - { regexp: "^alias reset=\"php artisan migrate:reset\"", line: "alias reset=\"php artisan migrate:reset\"" }
+  - { regexp: "^alias build=\"php artisan migrate --seed\"", line: "alias build=\"php artisan migrate --seed\"" }
