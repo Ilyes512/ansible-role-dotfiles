@@ -3,7 +3,7 @@
   lineinfile:
     dest: "/home/{{ dotfiles_user }}/.profile"
     regexp: "(?i)^# *Laravel Helpers"
-    line: "\n# Laravel Helpers"
+    line: "# Laravel Helpers"
     owner: "{{ dotfiles_user }}"
     group: "{{ dotfiles_group }}"
     create: yes
