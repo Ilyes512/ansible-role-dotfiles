@@ -1,5 +1,5 @@
 ---
-- name: Dotfiles | Check for the Laravel Helpers
+- name: Check for the Laravel Helpers
   lineinfile:
     dest: "/home/{{ dotfiles_user }}/.profile"
     regexp: "(?i)^# *Laravel Helpers"
@@ -10,7 +10,7 @@
     backup: yes
     state: present
 
-- name: Dotfiles | Add the Laravel Helpers
+- name: Add the Laravel Helpers
   lineinfile:
     dest: "/home/{{ dotfiles_user }}/.profile"
     regexp: "{{ item.regexp }}"
