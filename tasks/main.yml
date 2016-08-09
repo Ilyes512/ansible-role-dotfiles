@@ -1,5 +1,6 @@
 ---
 - name: Check for the Laravel Helpers
+  become: yes
   lineinfile:
     dest: "/home/{{ dotfiles_user }}/.profile"
     regexp: "(?i)^# *Laravel Helpers"
@@ -11,10 +12,13 @@
     state: present
 
 - name: Add the Laravel Helpers
+  become: yes
   lineinfile:
     dest: "/home/{{ dotfiles_user }}/.profile"
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
+    owner: "{{ dotfiles_user }}"
+    group: "{{ dotfiles_group }}"
     backup: yes
     state: present
-  with_items: dotfiles_laravel_helpers
+  with_items: "{{ dotfiles_laravel_helpers }}"
